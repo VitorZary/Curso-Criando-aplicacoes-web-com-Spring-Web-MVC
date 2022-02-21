@@ -22,23 +22,24 @@ public class Telegram {
 
     public void enviarMensagem(MessageSend mensagem) {
         //HTTP CLIENT
-        ResultBotTelegram resultBotTelegramResponseEntity = javaHttpClient.enviarMensagem(mensagem);
+        //ResultBotTelegram resultBotTelegramResponseEntity = javaHttpClient.enviarMensagem(mensagem);
+
         //RestTemplate
-        //restTemplateClient.enviarMensagem(mensagem);
+        restTemplateClient.enviarMensagem(mensagem);
 
         //FeingClient
-        ResultBotTelegram resultBotTelegram = feingClient.enviarMensagem1(mensagem);
+        //ResultBotTelegram resultBotTelegram = feingClient.enviarMensagem1(mensagem);
     }
 
     public ResultBotTelegramList buscarAtualizacao() {
         //HTTP CLIENT
-        ResultBotTelegramList resultBotTelegramList = javaHttpClient.buscarAtualizacao();
+        //ResultBotTelegramList resultBotTelegramList = javaHttpClient.buscarAtualizacao();
 
         //RestTemplate
-        //ResultBotTelegramList resultBotTelegramList1 = restTemplateClient.buscarAtualizacao();
+        ResultBotTelegramList resultBotTelegramList1 = restTemplateClient.buscarAtualizacao();
 
         //FeingClient
         //feingClient.buscaratualizacao();
-        return resultBotTelegramList;
+        return resultBotTelegramList1;
     }
 }
