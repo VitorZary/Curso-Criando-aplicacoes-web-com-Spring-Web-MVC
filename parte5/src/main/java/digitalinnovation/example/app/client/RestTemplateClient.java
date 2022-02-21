@@ -31,26 +31,26 @@ public class RestTemplateClient {
         //postForLocation retornando a uri, Pega informação do header
         URI uri = restTemplate.postForLocation(BASE_PATH + TOKEN + "/sendMessage", msg);
 
-        //postForLocation retornando o objeto que eu definir de retorno
-        ResultBotTelegram retorno = restTemplate.postForObject(BASE_PATH + TOKEN + "/sendMessage",
-                msg, ResultBotTelegram.class);
-
-        //postForLocation retornando o objeto que eu definir de retorno com dados da requisição, Headers,HTTP status...
-        ResponseEntity<ResultBotTelegram> retorno2 = restTemplate.postForEntity(BASE_PATH + TOKEN + "/sendMessage",
-                msg, ResultBotTelegram.class);
-
-        //postForLocation retornando o objeto que eu definir de retorno com dados da requisição, Headers,HTTP status...
-        //Enviando Headers
-        HttpHeaders headers = headers();
-        HttpEntity<MessageSend> request = new HttpEntity<>(msg, headers);
-        ResponseEntity<ResultBotTelegram> retorno3 = restTemplate.postForEntity(BASE_PATH + TOKEN + "/sendMessage",
-                request, ResultBotTelegram.class);
-
-        //exchange
-        HttpHeaders headers1 = headers();
-        HttpEntity<MessageSend> request1 = new HttpEntity<>(msg, headers);
-        ResponseEntity<ResultBotTelegram> retorno4 = restTemplate.exchange(BASE_PATH + TOKEN + "/sendMessage",
-                HttpMethod.POST, request1, ResultBotTelegram.class);
+//        //postForLocation retornando o objeto que eu definir de retorno
+//        ResultBotTelegram retorno = restTemplate.postForObject(BASE_PATH + TOKEN + "/sendMessage",
+//                msg, ResultBotTelegram.class);
+//
+//        //postForLocation retornando o objeto que eu definir de retorno com dados da requisição, Headers,HTTP status...
+//        ResponseEntity<ResultBotTelegram> retorno2 = restTemplate.postForEntity(BASE_PATH + TOKEN + "/sendMessage",
+//                msg, ResultBotTelegram.class);
+//
+//        //postForLocation retornando o objeto que eu definir de retorno com dados da requisição, Headers,HTTP status...
+//        //Enviando Headers
+//        HttpHeaders headers = headers();
+//        HttpEntity<MessageSend> request = new HttpEntity<>(msg, headers);
+//        ResponseEntity<ResultBotTelegram> retorno3 = restTemplate.postForEntity(BASE_PATH + TOKEN + "/sendMessage",
+//                request, ResultBotTelegram.class);
+//
+//        //exchange
+//        HttpHeaders headers1 = headers();
+//        HttpEntity<MessageSend> request1 = new HttpEntity<>(msg, headers);
+//        ResponseEntity<ResultBotTelegram> retorno4 = restTemplate.exchange(BASE_PATH + TOKEN + "/sendMessage",
+//                HttpMethod.POST, request1, ResultBotTelegram.class);
 
     }
 
